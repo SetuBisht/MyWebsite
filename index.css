@@ -9,7 +9,6 @@
     font-style: normal;
 }
 
-/* Global Styles */
 body {
     font-family: "Roboto",Arial, sans-serif;
     line-height: 1.6;
@@ -83,4 +82,15 @@ body {
 .menu .menu-content:hover span {
     color: #f6c500;
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="white"/></svg>'), auto;
+}
+.home{
+    position: absolute;
+    width: 200px;
+    right: 0;
+    bottom: 0;
+    padding:10px;
+    line-height: 1.5;
+}
+.home_aboutme span{
+    display: block;
 }
