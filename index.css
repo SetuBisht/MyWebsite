@@ -10,19 +10,35 @@
 }
 
 body {
+    -webkit-user-select: none;
+        /* Safari */
+        -ms-user-select: none;
+        /* IE 10 and IE 11 */
+        user-select: none;
+        /* Standard syntax */
     font-family: "Roboto",Arial, sans-serif;
     line-height: 1.6;
-    background: #202020;
+    background: #20202000;
     color: #fff9f9;
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="yellow"/></svg>'), auto;
 }
-
+#container {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: hidden;
+    filter: grayscale(90%);
+}
 .root_container {
     width: 100%;
     height: 100%;
     margin: auto;
     overflow: hidden;
     padding: 50px;
+    top: 0;
+    margin: auto;
+    overflow: hidden;
+    position: absolute;
 }
 
 .border {
@@ -38,7 +54,16 @@ body {
     top: -25px;
     left: -15px;
     font-size: 30px;
-    background: #202020;
+    background: #191c1e;
+    filter: grayscale(90%)
+}
+.user-work {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    font-size: 20px;
+    background: #191c1e;
+    filter: grayscale(90%)
 }
 .contact-info{
     transform: rotate(-90deg);
@@ -47,16 +72,17 @@ body {
     bottom: 52px;
     left: -72px;
     font-size: 10px;
-    background: #202020;
+    background: #191c1e;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
     gap:16px;
+    filter: grayscale(90%)
 }
 
 .menu {
-    margin-top: 30px;
+    margin-top: 50px;
     padding: 15px;
 }
 
@@ -93,4 +119,5 @@ body {
 }
 .home_aboutme span{
     display: block;
+    font-weight: 600px;
 }
