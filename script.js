@@ -84,3 +84,55 @@ function onWindowResize() {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
+//contact links
+const menuItemsContact = document.querySelectorAll(".menu-content--contact");
+
+menuItemsContact.forEach((item) => {
+  console.log(item, "item");
+  item.addEventListener("click", function () {
+    const link = this.querySelector("span").innerText;
+    console.log(link, "link");
+    switch (link.toLowerCase()) {
+      case "github":
+        window.open("https://github.com", "_blank");
+        break;
+      case "linkedin":
+        window.open("https://www.linkedin.com", "_blank");
+        break;
+      case "email":
+        window.location.href = "mailto:your-email@example.com";
+        break;
+      default:
+        break;
+    }
+  });
+});
+
+//menu funcatlity
+
+const menu = document.querySelector(".menu");
+const menuItems = document.querySelectorAll(".menu-content");
+menuItems.forEach((item, index) => {
+  item.addEventListener("click", function () {
+    // Toggle the 'menu-active' class among menu items
+    if (this.classList.contains("menu-active")) return;
+    menuItems.forEach((item) => {
+      item.classList.toggle("menu-active", item === this);
+    });
+
+    // Toggle the text of the clicked menu item
+    const span = this.querySelector("span");
+    span.textContent =
+      span.textContent === span.getAttribute("data-element")
+        ? "___"
+        : span.getAttribute("data-element");
+
+    if (span.getAttribute("data-element") == "Home") {
+      const spanElement = document.querySelector(`[data-element="Projects"]`);
+      spanElement.textContent = "Projects";
+    } else {
+      const spanElement = document.querySelector(`[data-element="Home"]`);
+      spanElement.textContent = "Home";
+    }
+  });
+});
