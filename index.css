@@ -240,7 +240,7 @@ body {
     position: absolute;
     background: var(--hover-color);
     height: 100vh;
-    width: 70vw;
+    width: 80vw;
     clip-path: polygon(47% 0%, 100% 0%, 100% 100%, 11% 100%);
     top: 0;
     right: 0;
