@@ -160,3 +160,75 @@ body {
 .menu-active span {
     color: var(--hover-color);
 }
+
+
+/* Loader Styles */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+
+.loading-slide {
+    position: relative;
+    width: 25%;
+    margin: 0 auto;
+}
+  
+.loading-slide * {
+    animation-play-state: paused;
+}
+
+.loading-slide:hover * {
+    animation-play-state: running;
+}
+
+.loading-slide .slide {
+    position: absolute;
+    width: 25%;
+    height: 5px;
+    background: var(--hover-color);
+    animation: slide 2s infinite;
+}
+
+.loading-slide .slide:nth-of-type(0n+1) {
+    opacity: 0.2;
+    transform: scale(1.8, 1);
+    animation-delay: 0.2s;
+}
+
+.loading-slide .slide:nth-of-type(0n+2) {
+    opacity: 0.4;
+    transform: scale(1.4, 1);
+    animation-delay: 0.1s;
+}
+
+.loading-slide .slide:nth-of-type(0n+3) {
+    opacity: 0.8;
+}
+
+@keyframes slide {
+    0% {
+        left: 0%;
+    }
+
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+/* Hide loader when scene is loaded */
+.loaded .loader-wrapper {
+    display: none;
+}

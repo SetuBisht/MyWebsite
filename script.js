@@ -1,5 +1,10 @@
 var container = document.getElementById("container");
 
+// Add a class to the body when the scene is loaded
+function sceneLoaded() {
+  document.body.classList.add("loaded");
+}
+// three js background
 var vertexHeight = 15000,
   planeDefinition = 100,
   planeSize = 1245000,
@@ -52,6 +57,7 @@ function updatePlane() {
 }
 
 render();
+sceneLoaded();
 
 var count = 0;
 function render() {
