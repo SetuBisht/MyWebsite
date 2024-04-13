@@ -117,6 +117,8 @@ menuItemsContact.forEach((item) => {
 //menu funcatlity
 
 const menu = document.querySelector(".menu");
+const description = document.querySelector(".description");
+const projects = document.querySelector(".projects");
 const menuItems = document.querySelectorAll(".menu-content");
 menuItems.forEach((item, index) => {
   item.addEventListener("click", function () {
@@ -136,9 +138,13 @@ menuItems.forEach((item, index) => {
     if (span.getAttribute("data-element") == "Home") {
       const spanElement = document.querySelector(`[data-element="Projects"]`);
       spanElement.textContent = "Projects";
+      description.style.display = "block";
+      projects.style.display = "none";
     } else {
       const spanElement = document.querySelector(`[data-element="Home"]`);
       spanElement.textContent = "Home";
+      description.style.display = "none";
+      projects.style.display = "block";
     }
   });
 });
