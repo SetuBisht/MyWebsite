@@ -139,12 +139,18 @@ menuItems.forEach((item, index) => {
       const spanElement = document.querySelector(`[data-element="Projects"]`);
       spanElement.textContent = "Projects";
       description.style.display = "block";
-      projects.style.display = "none";
+      projects.classList.remove("slide-in");
+      projects.classList.add("slide-out");
+      setTimeout(() => {
+        projects.style.display = "none";
+      }, 500);
     } else {
       const spanElement = document.querySelector(`[data-element="Home"]`);
       spanElement.textContent = "Home";
       description.style.display = "none";
       projects.style.display = "block";
+      projects.classList.remove("slide-out");
+      projects.classList.add("slide-in");
     }
   });
 });
