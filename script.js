@@ -181,6 +181,7 @@ fetch("./assets/jsons/projects.json")
     projectVisit.classList.add("project-visit");
     const visitLink = document.createElement("a");
     visitLink.href = projectsShowcase[0].visitUrl;
+    visitLink.target = "_blank";
     visitLink.textContent = "Visit Project";
     projectVisit.appendChild(visitLink);
 
