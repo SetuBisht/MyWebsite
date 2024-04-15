@@ -337,6 +337,7 @@ clip-path: polygon(47% 0%, 100% 0%, 100% 100%, 11% 100%);
     font-weight: 600;
     font-size: 60px;
 }
+
 .projects-showcase .project-heading{
     position: absolute;
     top:10%;
@@ -344,18 +345,21 @@ clip-path: polygon(47% 0%, 100% 0%, 100% 100%, 11% 100%);
     transform: translate(-20%, -50%);
 }
 .projects-showcase .project-description {
+    font-size: 20px;
     position: absolute;
     top: 30%;
     left: 50%;
     transform: translate(-40%, -50%);
 }
 .projects-showcase .project-skills {
+    font-size: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-60%, -50%);
 }
 .projects-showcase .project-visit {
+    font-size: 20px;
     position: absolute;
     top: 70%;
     left: 50%;
