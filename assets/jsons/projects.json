@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Project 1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "visitUrl": "https://example.com/project1",
+    "img":""
+  },
+  {
+    "name": "Project 2",
+    "description": "Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.",
+    "skills": ["React", "Node.js", "MongoDB"],
+    "visitUrl": "https://example.com/project2",
+    "img":""
+  },
+  {
+    "name": "Project 3",
+    "description": "Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.",
+    "skills": ["Python", "Django", "PostgreSQL"],
+    "visitUrl": "https://example.com/project3",
+    "img":""
+  }
+]
