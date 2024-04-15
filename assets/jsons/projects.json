@@ -1,22 +1,22 @@
 [
   {
-    "name": "Project 1",
+    "name": "Easy Platter",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
-    "skills": ["HTML", "CSS", "JavaScript"],
+    "skills": ["ReactJs", "NextJs", "JavaScript"],
     "visitUrl": "https://example.com/project1",
     "img":""
   },
   {
-    "name": "Project 2",
+    "name": "3D hotspot",
     "description": "Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.",
-    "skills": ["React", "Node.js", "MongoDB"],
+    "skills": ["React", "ThreeJs" ],
     "visitUrl": "https://example.com/project2",
     "img":""
   },
   {
-    "name": "Project 3",
+    "name": "chathub",
     "description": "Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.",
-    "skills": ["Python", "Django", "PostgreSQL"],
+    "skills": ["reactJS", "NodeJS", "MongoDb"],
     "visitUrl": "https://example.com/project3",
     "img":""
   }

@@ -154,3 +154,77 @@ menuItems.forEach((item, index) => {
     }
   });
 });
+//projects conatainer
+let allProjects = [];
+let currentIndex = 0;
+const projectContainer = document.querySelector(".projects-showcase");
+// Get the container element
+fetch("./assets/jsons/projects.json")
+  .then((response) => response.json())
+  .then((projectsShowcase) => {
+    // Get the container element
+
+    allProjects = projectsShowcase;
+    const projectName = document.createElement("span");
+    projectName.classList.add("project-heading");
+    projectName.textContent = projectsShowcase[0].name;
+
+    const projectDescription = document.createElement("span");
+    projectDescription.classList.add("project-description");
+    projectDescription.textContent = projectsShowcase[0].description;
+
+    const projectSkills = document.createElement("span");
+    projectSkills.classList.add("project-skills");
+    projectSkills.textContent = projectsShowcase[0].skills.join(", ");
+
+    const projectVisit = document.createElement("span");
+    projectVisit.classList.add("project-visit");
+    const visitLink = document.createElement("a");
+    visitLink.href = projectsShowcase[0].visitUrl;
+    visitLink.textContent = "Visit Project";
+    projectVisit.appendChild(visitLink);
+
+    // Append the created elements to the container
+    projectContainer.appendChild(projectName);
+    projectContainer.appendChild(projectDescription);
+    projectContainer.appendChild(projectSkills);
+    projectContainer.appendChild(projectVisit);
+  })
+  .catch((error) => console.error("Error loading projects:", error));
+
+//pagination
+
+const leftArrow = document.querySelector(".left");
+const rightArrow = document.querySelector(".right");
+
+// Initialize index variable to keep track of currently displayed project
+
+// Function to display the current project
+function displayProject(index) {
+  // Ensure index stays within bounds
+  currentIndex = (index + allProjects.length) % allProjects.length;
+
+  // Get the current project
+  const currentProject = allProjects[currentIndex];
+
+  // Update the HTML content with the current project information
+  const projectName = document.querySelector(".project-heading");
+  const projectDescription = document.querySelector(".project-description");
+  const projectSkills = document.querySelector(".project-skills");
+  const projectVisit = document.querySelector(".project-visit a");
+
+  projectName.textContent = currentProject.name;
+  projectDescription.textContent = currentProject.description;
+  projectSkills.textContent = currentProject.skills.join(", ");
+  projectVisit.href = currentProject.visitUrl;
+}
+
+// Event listener for left arrow click
+leftArrow.addEventListener("click", () => {
+  displayProject(currentIndex - 1);
+});
+
+// Event listener for right arrow click
+rightArrow.addEventListener("click", () => {
+  displayProject(currentIndex + 1);
+});
