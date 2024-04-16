@@ -131,6 +131,7 @@ menuItemsContact.forEach((item) => {
 const menu = document.querySelector(".menu");
 const description = document.querySelector(".description");
 const projects = document.querySelector(".projects");
+const skills = document.querySelector(".skills");
 const menuItems = document.querySelectorAll(".menu-content");
 menuItems.forEach((item, index) => {
   item.addEventListener("click", function () {
@@ -151,18 +152,42 @@ menuItems.forEach((item, index) => {
       const spanElement = document.querySelector(`[data-element="Projects"]`);
       spanElement.textContent = "Projects";
       description.style.display = "block";
+      const spanElement2 = document.querySelector(`[data-element="Skills"]`);
+      spanElement2.textContent = "Skills";
+      skills.style.display = "none";
+      description.style.display = "block";
+
       projects.classList.remove("slide-in");
       projects.classList.add("slide-out");
       setTimeout(() => {
         projects.style.display = "none";
       }, 500);
-    } else {
+    }
+
+    if (span.getAttribute("data-element") == "Projects") {
       const spanElement = document.querySelector(`[data-element="Home"]`);
       spanElement.textContent = "Home";
+      const spanElement2 = document.querySelector(`[data-element="Skills"]`);
+      spanElement2.textContent = "Skills";
+      skills.style.display = "none";
       description.style.display = "none";
       projects.style.display = "block";
       projects.classList.remove("slide-out");
       projects.classList.add("slide-in");
+    }
+    if (span.getAttribute("data-element") == "Skills") {
+      const spanElement = document.querySelector(`[data-element="Projects"]`);
+      spanElement.textContent = "Projects";
+      description.style.display = "block";
+      const spanElement2 = document.querySelector(`[data-element="Home"]`);
+      spanElement2.textContent = "Home";
+      description.style.display = "none";
+      skills.style.display = "block";
+      projects.classList.remove("slide-in");
+      projects.classList.add("slide-out");
+      setTimeout(() => {
+        projects.style.display = "none";
+      }, 500);
     }
   });
 });
@@ -176,33 +201,6 @@ fetch("./assets/jsons/projects.json")
   .then((response) => response.json())
   .then((projectsShowcase) => {
     // Get the container element
-
-    allProjects = projectsShowcase;
-    const projectName = document.createElement("span");
-    projectName.classList.add("project-heading");
-    projectName.textContent = projectsShowcase[0].name;
-
-    const projectDescription = document.createElement("span");
-    projectDescription.classList.add("project-description");
-    projectDescription.textContent = projectsShowcase[0].description;
-
-    const projectSkills = document.createElement("span");
-    projectSkills.classList.add("project-skills");
-    projectSkills.textContent = projectsShowcase[0].skills.join(", ");
-
-    const projectVisit = document.createElement("span");
-    projectVisit.classList.add("project-visit");
-    const visitLink = document.createElement("a");
-    visitLink.href = projectsShowcase[0].visitUrl;
-    visitLink.target = "_blank";
-    visitLink.textContent = "Visit Project";
-    projectVisit.appendChild(visitLink);
-
-    // Append the created elements to the container
-    projectContainer.appendChild(projectName);
-    projectContainer.appendChild(projectDescription);
-    projectContainer.appendChild(projectSkills);
-    projectContainer.appendChild(projectVisit);
   })
   .catch((error) => console.error("Error loading projects:", error));
 
