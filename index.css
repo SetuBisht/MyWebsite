@@ -433,6 +433,9 @@ clip-path: polygon(47% 0%, 100% 0%, 100% 100%, 11% 100%);
     z-index: 1;
     width: 100px;
     height: 100px;
+    display: flex;
+        justify-content: center;
+        align-items: center;
     background-color: #dedede;
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
@@ -446,14 +449,15 @@ clip-path: polygon(47% 0%, 100% 0%, 100% 100%, 11% 100%);
 
 .box-face .box-text {
     line-height: 100px;
-    padding-left: 20px;
-    padding-bottom: 20px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
     font-size: 40px;
     color: #bababa;
-    -webkit-transform: rotate(-135deg);
-    -ms-transform: rotate(-135deg);
-    -moz-transform: rotate(-135deg);
-    transform: rotate(-135deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
     transition: opacity 0s linear .3s;
 }
 
@@ -493,10 +497,10 @@ clip-path: polygon(47% 0%, 100% 0%, 100% 100%, 11% 100%);
     text-align: center;
     padding: 5px 0;
     z-index: 1000;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    transform: rotate(-90deg);
     transition: visibility 0s linear .3s, opacity 1s linear .3s;
 }
 
