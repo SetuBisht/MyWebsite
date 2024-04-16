@@ -55,18 +55,28 @@ function updatePlane() {
     planeGeo.vertices[i]._myZ = planeGeo.vertices[i].z;
   }
 }
-
+var count = 0;
+let rotationSpeed = 0.001;
 render();
 sceneLoaded();
 
-var count = 0;
+// Variable to hold rotation speed
+
+// Listen for mouse scroll event
+window.addEventListener("wheel", function (event) {
+  // Update rotation speed based on scroll direction and magnitude
+  rotationSpeed += event.deltaY * 0.00001; // Adjust multiplier for sensitivity
+  console.log("dasdasd", rotationSpeed);
+});
 function render() {
   requestAnimationFrame(render);
   // camera.position.z -= 150;
   var x = camera.position.x;
   var z = camera.position.z;
-  camera.position.x = x * Math.cos(0.001) + z * Math.sin(0.001) - 10;
-  camera.position.z = z * Math.cos(0.001) - x * Math.sin(0.001) - 10;
+  camera.position.x =
+    x * Math.cos(rotationSpeed) + z * Math.sin(rotationSpeed) - 10;
+  camera.position.z =
+    z * Math.cos(rotationSpeed) - x * Math.sin(rotationSpeed) - 10;
   camera.lookAt(new THREE.Vector3(0, 8000, 0));
 
   for (var i = 0; i < planeGeo.vertices.length; i++) {
@@ -97,7 +107,6 @@ menuItemsContact.forEach((item) => {
   console.log(item, "item");
   item.addEventListener("click", function () {
     const link = this.querySelector("span").innerText;
-    console.log(link, "link");
     switch (link.toLowerCase()) {
       case "github":
         window.open("https://github.com/SetuBisht", "_blank");
@@ -157,6 +166,7 @@ menuItems.forEach((item, index) => {
     }
   });
 });
+
 //projects conatainer
 let allProjects = [];
 let currentIndex = 0;

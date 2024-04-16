@@ -365,3 +365,45 @@ clip-path: polygon(47% 0%, 100% 0%, 100% 100%, 11% 100%);
     left: 50%;
     transform: translate(-90%, -50%);
 }
+/* media queries */
+@media only screen and (min-width:  1400px) {
+    .projects-showcase .project-heading {
+        font-size: 40px;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-25%, -50%);
+    }
+    .projects-showcase .project-description {
+        font-size: 20px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-30%, -50%);
+    }
+    .projects-showcase .project-skills {
+        font-size: 20px;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-60%, -50%);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .projects-showcase .project-heading {
+        font-size: 40px;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-25%, -50%);
+    }
+
+    .projects-showcase .project-description {
+        font-size: 20px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-30%, -50%);
+    }
+}
