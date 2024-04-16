@@ -100,13 +100,16 @@ menuItemsContact.forEach((item) => {
     console.log(link, "link");
     switch (link.toLowerCase()) {
       case "github":
-        window.open("https://github.com", "_blank");
+        window.open("https://github.com/SetuBisht", "_blank");
         break;
       case "linkedin":
-        window.open("https://www.linkedin.com", "_blank");
+        window.open(
+          "https://www.linkedin.com/in/vishwavijay-bisht-2952a917a/",
+          "_blank"
+        );
         break;
       case "email":
-        window.location.href = "mailto:your-email@example.com";
+        window.location.href = "mailto:vish.vb11@gmail.com";
         break;
       default:
         break;
