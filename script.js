@@ -131,6 +131,7 @@ menuItemsContact.forEach((item) => {
 const menu = document.querySelector(".menu");
 const description = document.querySelector(".description");
 const projects = document.querySelector(".projects");
+const galleries = document.querySelectorAll(".gallery__column");
 const skills = document.querySelector(".skills");
 const menuItems = document.querySelectorAll(".menu-content");
 menuItems.forEach((item, index) => {
@@ -151,16 +152,16 @@ menuItems.forEach((item, index) => {
     if (span.getAttribute("data-element") == "Home") {
       const spanElement = document.querySelector(`[data-element="Projects"]`);
       spanElement.textContent = "Projects";
-      description.style.display = "block";
       const spanElement2 = document.querySelector(`[data-element="Skills"]`);
       spanElement2.textContent = "Skills";
       skills.style.display = "none";
-      description.style.display = "block";
-
-      projects.classList.remove("slide-in");
-      projects.classList.add("slide-out");
+      galleries.forEach((gallery) => {
+        gallery.classList.remove("slide-in");
+        gallery.classList.add("slide-out");
+      });
       setTimeout(() => {
         projects.style.display = "none";
+        description.style.display = "block";
       }, 500);
     }
 
@@ -172,8 +173,10 @@ menuItems.forEach((item, index) => {
       skills.style.display = "none";
       description.style.display = "none";
       projects.style.display = "block";
-      projects.classList.remove("slide-out");
-      projects.classList.add("slide-in");
+      galleries.forEach((gallery) => {
+        gallery.classList.remove("slide-out");
+        gallery.classList.add("slide-in");
+      });
     }
     if (span.getAttribute("data-element") == "Skills") {
       const spanElement = document.querySelector(`[data-element="Projects"]`);
@@ -182,11 +185,13 @@ menuItems.forEach((item, index) => {
       const spanElement2 = document.querySelector(`[data-element="Home"]`);
       spanElement2.textContent = "Home";
       description.style.display = "none";
-      skills.style.display = "block";
-      projects.classList.remove("slide-in");
-      projects.classList.add("slide-out");
+      galleries.forEach((gallery) => {
+        gallery.classList.remove("slide-in");
+        gallery.classList.add("slide-out");
+      });
       setTimeout(() => {
         projects.style.display = "none";
+        skills.style.display = "block";
       }, 500);
     }
   });
