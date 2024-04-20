@@ -132,6 +132,7 @@ const menu = document.querySelector(".menu");
 const description = document.querySelector(".description");
 const projects = document.querySelector(".projects");
 const galleries = document.querySelectorAll(".gallery__column");
+const text = document.querySelectorAll(".description_text");
 const skills = document.querySelector(".skills");
 const menuItems = document.querySelectorAll(".menu-content");
 menuItems.forEach((item, index) => {
@@ -162,6 +163,10 @@ menuItems.forEach((item, index) => {
       setTimeout(() => {
         projects.style.display = "none";
         description.style.display = "block";
+        text.forEach((gallery) => {
+          gallery.classList.add("slide-in");
+          gallery.classList.remove("slide-out");
+        });
       }, 500);
     }
 
@@ -173,6 +178,10 @@ menuItems.forEach((item, index) => {
       skills.style.display = "none";
       description.style.display = "none";
       projects.style.display = "block";
+      text.forEach((gallery) => {
+        gallery.classList.remove("slide-in");
+        gallery.classList.add("slide-out");
+      });
       galleries.forEach((gallery) => {
         gallery.classList.remove("slide-out");
         gallery.classList.add("slide-in");
@@ -185,6 +194,10 @@ menuItems.forEach((item, index) => {
       const spanElement2 = document.querySelector(`[data-element="Home"]`);
       spanElement2.textContent = "Home";
       description.style.display = "none";
+      text.forEach((gallery) => {
+        gallery.classList.remove("slide-in");
+        gallery.classList.add("slide-out");
+      });
       galleries.forEach((gallery) => {
         gallery.classList.remove("slide-in");
         gallery.classList.add("slide-out");
