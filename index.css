@@ -634,3 +634,59 @@ animation: slide-out 0.5s ease forwards;
         opacity: 1;
     }
 }
+
+
+/* mobile */
+@media only screen and (max-width: 800px) {
+  .root_container{
+    padding:30px;
+  }
+  .user-name{
+    white-space: nowrap;
+    font-size: 20px;
+    transform: translate(-50%, 0px);
+    left: 50%;
+    width: fit-content;
+    text-align: center;
+  }
+.user-work {
+    font-size: 15px;
+    transform: translate(-50%, 0px);
+    left: 50%;
+    width: 100%;
+    text-align: center;
+}
+.menu{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.projects{
+    width: 100%;
+    height: 75%;
+    transform: translateY(33%);
+    }
+.gallery{
+    flex-direction: column;
+    justify-content:flex-start;
+}
+.skills{
+    right:-105px;
+    bottom: -180px
+}
+.section{
+    transform:scale(0.75)
+}
+}
+@media only screen and (max-width: 400px) {
+
+
+    .skills {
+        right: -130px;
+        bottom: -205px
+    }
+
+    .section {
+        transform: scale(0.6)
+    }
+}
