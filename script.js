@@ -1,6 +1,5 @@
 var container = document.getElementById("container");
 
-// Add a class to the body when the scene is loaded
 function sceneLoaded() {
   document.body.classList.add("loaded");
   // Get the text block element
@@ -68,12 +67,10 @@ let rotationSpeed = 0.001;
 render();
 sceneLoaded();
 
-// Variable to hold rotation speed
-
 // Listen for mouse scroll event
 window.addEventListener("wheel", function (event) {
   // Update rotation speed based on scroll direction and magnitude
-  rotationSpeed += event.deltaY * 0.00001; // Adjust multiplier for sensitivity
+  rotationSpeed += event.deltaY * 0.00001;
   console.log("dasdasd", rotationSpeed);
 });
 function render() {
@@ -232,45 +229,6 @@ menuItems.forEach((item, index) => {
   });
 });
 
-//projects conatainer
-let allProjects = [];
-let currentIndex = 0;
-const projectContainer = document.querySelector(".projects-showcase");
-// Get the container element
-fetch("./assets/jsons/projects.json")
-  .then((response) => response.json())
-  .then((projectsShowcase) => {
-    // Get the container element
-  })
-  .catch((error) => console.error("Error loading projects:", error));
-
-//pagination
-
-const leftArrow = document.querySelector(".left");
-const rightArrow = document.querySelector(".right");
-
-// Initialize index variable to keep track of currently displayed project
-
-// Function to display the current project
-function displayProject(index) {
-  // Ensure index stays within bounds
-  currentIndex = (index + allProjects.length) % allProjects.length;
-
-  // Get the current project
-  const currentProject = allProjects[currentIndex];
-
-  // Update the HTML content with the current project information
-  const projectName = document.querySelector(".project-heading");
-  const projectDescription = document.querySelector(".project-description");
-  const projectSkills = document.querySelector(".project-skills");
-  const projectVisit = document.querySelector(".project-visit a");
-
-  projectName.textContent = currentProject.name;
-  projectDescription.textContent = currentProject.description;
-  projectSkills.textContent = currentProject.skills.join(", ");
-  projectVisit.href = currentProject.visitUrl;
-}
-
 //cursor
 let cursor = document.getElementById("cursor");
 let circle1 = document.getElementById("circle1");
@@ -293,7 +251,7 @@ function changeCursorColorToWhite() {
 
 // Function to reset cursor color to default
 function resetCursorColor() {
-  circle1.style.backgroundColor = "#ffc107"; // Change to your default cursor color
+  circle1.style.backgroundColor = "#ffc107";
 }
 
 let timer = false;
@@ -314,7 +272,7 @@ function hideCursor() {
 
 // Function to reset cursor color to default
 function showCursor() {
-  circle1.style.visibility = "visible"; // Change to your default cursor color
+  circle1.style.visibility = "visible";
 }
 const links = document.querySelectorAll(".gallery__link");
 const box = document.querySelectorAll(".box");
