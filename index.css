@@ -485,6 +485,46 @@ clip-path: polygon(47% 0%, 100% 0%, 100% 100%, 11% 100%);
     transform: rotate(45deg);
     margin: 25px;
     cursor: pointer;
+
+    &:hover {
+
+        &:not(.link)>.box-face,
+        >.box-back {
+            transform: translateZ(100px) rotateX(180deg);
+            background-color: transparent !important;
+        }
+
+        &:not(.link)>.box-face>.box-text {
+            opacity: 0;
+        }
+
+        & .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &.link>.box-face {
+            background-color: transparent !important;
+
+            &>.box-text {
+                color: #323232;
+            }
+        }
+    }
+
+    &.link {
+        &>.box-face {
+            background-color: #323232;
+            border: 1px solid #323232;
+            box-sizing: border-box;
+            transition: background-color .5s;
+        }
+
+        & .box-text {
+            color: #efefef;
+            transition: color .5s;
+        }
+    }
 }
 
 .box-face,
@@ -626,14 +666,17 @@ animation: slide-out 0.5s ease forwards;
   @keyframes blinkAnimation {
       0% {
           opacity: 0;
+          /* Text block starts invisible */
       }
 
       50% {
           opacity: 1;
+          /* Text block is visible */
       }
 
       100% {
           opacity: 0;
+          /* Text block becomes invisible again */
       }
   }
 
@@ -683,10 +726,13 @@ animation: slide-out 0.5s ease forwards;
 }
 }
 @media only screen and (max-width: 400px) {
+
+
     .skills {
         right: -130px;
         bottom: -205px
     }
+
     .section {
         transform: scale(0.6)
     }
