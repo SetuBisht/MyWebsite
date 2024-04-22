@@ -635,9 +635,42 @@ animation: slide-out 0.5s ease forwards;
     }
 }
 
+  .text-block {
+    position: absolute;
+    font-size: 25px;
+    z-index: 5;
+    color: white; 
+    top: 50%;
+    display: block;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: blinkAnimation 1s infinite;
+    /* Initial blink animation */
+    display: none;
+  }
+
+  @keyframes blinkAnimation {
+      0% {
+          opacity: 0;
+          /* Text block starts invisible */
+      }
+
+      50% {
+          opacity: 1;
+          /* Text block is visible */
+      }
+
+      100% {
+          opacity: 0;
+          /* Text block becomes invisible again */
+      }
+  }
 
 /* mobile */
 @media only screen and (max-width: 800px) {
+    .text-block{
+        visibility: hidden;
+    }
   .root_container{
     padding:30px;
   }

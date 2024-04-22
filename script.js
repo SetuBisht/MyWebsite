@@ -3,6 +3,14 @@ var container = document.getElementById("container");
 // Add a class to the body when the scene is loaded
 function sceneLoaded() {
   document.body.classList.add("loaded");
+  // Get the text block element
+  const textBlock = document.getElementById("textBlock");
+  // Show the text block
+  textBlock.style.display = "block";
+  // Hide the text block after 3 seconds
+  setTimeout(() => {
+    textBlock.style.display = "none";
+  }, 3000);
 }
 // three js background
 var vertexHeight = 15000,
