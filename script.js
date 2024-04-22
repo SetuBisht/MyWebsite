@@ -229,7 +229,6 @@ menuItems.forEach((item, index) => {
   });
 });
 
-<<<<<<< HEAD
 //cursor
 let cursor = document.getElementById("cursor");
 let circle1 = document.getElementById("circle1");
@@ -284,7 +283,8 @@ links.forEach((item, index) => {
 box.forEach((item, index) => {
   item.addEventListener("mouseover", hideCursor);
   item.addEventListener("mouseout", showCursor);
-=======
+});
+
 //projects conatainer
 let allProjects = [];
 let currentIndex = 0;
@@ -323,14 +323,3 @@ function displayProject(index) {
   projectSkills.textContent = currentProject.skills.join(", ");
   projectVisit.href = currentProject.visitUrl;
 }
-
-// Event listener for left arrow click
-leftArrow.addEventListener("click", () => {
-  displayProject(currentIndex - 1);
-});
-
-// Event listener for right arrow click
-rightArrow.addEventListener("click", () => {
-  displayProject(currentIndex + 1);
->>>>>>> parent of c4c7fc2 (cursor fix)
-});
