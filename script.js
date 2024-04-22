@@ -271,12 +271,58 @@ function displayProject(index) {
   projectVisit.href = currentProject.visitUrl;
 }
 
-// Event listener for left arrow click
-leftArrow.addEventListener("click", () => {
-  displayProject(currentIndex - 1);
+//cursor
+let cursor = document.getElementById("cursor");
+let circle1 = document.getElementById("circle1");
+
+let mouseX = (event) => event.clientX;
+let mouseY = (event) => event.clientY;
+
+let positionElement = (event) => {
+  console.log(event.clientX, event.clientY, "asdasd");
+  let mouse = {
+    x: mouseX(event),
+    y: mouseY(event),
+  };
+  cursor.style.top = mouse.y + "px";
+  cursor.style.left = mouse.x + "px";
+};
+function changeCursorColorToWhite() {
+  circle1.style.backgroundColor = "white";
+}
+
+// Function to reset cursor color to default
+function resetCursorColor() {
+  circle1.style.backgroundColor = "#ffc107"; // Change to your default cursor color
+}
+
+let timer = false;
+window.onmousemove = (event) => {
+  let _event = event;
+  timer = setTimeout(() => {
+    positionElement(_event);
+  }, 1);
+};
+menuItems.forEach((item, index) => {
+  item.addEventListener("mouseover", changeCursorColorToWhite);
+  item.addEventListener("mouseout", resetCursorColor);
 });
 
-// Event listener for right arrow click
-rightArrow.addEventListener("click", () => {
-  displayProject(currentIndex + 1);
+function hideCursor() {
+  circle1.style.visibility = "hidden";
+}
+
+// Function to reset cursor color to default
+function showCursor() {
+  circle1.style.visibility = "visible"; // Change to your default cursor color
+}
+const links = document.querySelectorAll(".gallery__link");
+const box = document.querySelectorAll(".box");
+links.forEach((item, index) => {
+  item.addEventListener("mouseover", hideCursor);
+  item.addEventListener("mouseout", showCursor);
+});
+box.forEach((item, index) => {
+  item.addEventListener("mouseover", hideCursor);
+  item.addEventListener("mouseout", showCursor);
 });

@@ -25,6 +25,7 @@
 
 /* Body */
 body {
+    overflow: hidden;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -32,9 +33,24 @@ body {
     line-height: 1.6;
     background: var(--background-color);
     color: var(--text-color);
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="yellow"/></svg>'), auto;
+    cursor: none;
+}
+#cursor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+   z-index: 1000;
 }
 
+ #circle1 {
+     position: absolute;
+     background: #ffc107;
+     border-radius: 50%;
+     height: 1em;
+     width: 1em;
+     margin-top: 0;
+     margin-left: 0;
+ }
 /* Container */
 #container {
     height: 100vh;
@@ -127,13 +143,11 @@ body {
 .menu .menu-content:hover .menu-icon
  {
     background: var(--hover-color);
-    cursor: var(--hover-circle), auto;
 }
 
 
 .menu .menu-content:hover span {
     color:var(--hover-color); 
-    cursor: var(--hover-circle), auto;
 }
 
 /* Home */
