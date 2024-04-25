@@ -323,6 +323,9 @@ body {
 
 
 .gallery__column {
+    min-width: 278px;
+    max-width: 278px;
+    gap: 5px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -348,6 +351,7 @@ body {
 
 .gallery__link:hover .gallery__image {
     filter: grayscale(0);
+  
 }
 
 .gallery__link:hover .gallery__caption {
@@ -363,6 +367,7 @@ body {
     width: 100%;
     transition: .3s;
     filter: grayscale(1);
+    object-fit: contain;
 }
 
 .gallery__image:hover {
@@ -727,6 +732,9 @@ animation: slide-out 0.5s ease forwards;
 .gallery__column{
     height:auto
 }
+ .gallery__link .gallery__caption {
+     opacity: 1;
+ }
 }
 @media only screen and (max-width: 400px) {
 
@@ -738,5 +746,8 @@ animation: slide-out 0.5s ease forwards;
 
     .section {
         transform: scale(0.6)
+    }
+    .gallery__link .gallery__caption {
+        opacity: 1;
     }
 }
