@@ -345,13 +345,14 @@ body {
     animation: slide-out 0.5s ease forwards;
 }
 .gallery__link {
+  min-height: 200px;
     margin: 2px;
     overflow: hidden;
 }
 
 .gallery__link:hover .gallery__image {
     filter: grayscale(0);
-  
+transform: scale(0.95);
 }
 
 .gallery__link:hover .gallery__caption {
@@ -360,6 +361,8 @@ body {
 
 .gallery__thumb {
     position: relative;
+    overflow: hidden;
+    min-height: 200px;
 }
 
 .gallery__image {
@@ -367,10 +370,13 @@ body {
     width: 100%;
     transition: .3s;
     filter: grayscale(1);
-    object-fit: contain;
+    object-fit: cover;
+    min-height: 200px;
+   
 }
 
 .gallery__image:hover {
+    
     filter: grayscale(0);
 }
 
