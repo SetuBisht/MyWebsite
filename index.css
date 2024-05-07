@@ -352,7 +352,7 @@ body {
 
 .gallery__link:hover .gallery__image {
     filter: grayscale(0);
-transform: scale(0.95);
+     transform: scale(1.1);
 }
 
 .gallery__link:hover .gallery__caption {
