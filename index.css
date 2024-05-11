@@ -693,6 +693,13 @@ animation: slide-out 0.5s ease forwards;
 .large {
     min-height: 300px;
 }
+@media only screen and (max-width: 1300px) {
+
+.projects{
+    width:70%
+}
+    
+}
 /* mobile */
 @media only screen and (max-width: 800px) {
     .text-block{
