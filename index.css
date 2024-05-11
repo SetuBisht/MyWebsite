@@ -317,6 +317,7 @@ body {
     padding: 2px;
     transition: .3s;
     justify-content: flex-end;
+    gap:5px;
     
 }
 
