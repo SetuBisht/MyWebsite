@@ -302,7 +302,7 @@ body {
 .projects{
    display: none;
 
-   width: 50%;
+   width: 30%;
    height: 100%;
    position: absolute;
    right:0;
@@ -313,8 +313,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     height: 100%;
-    align-items: center;
-    display: flex;
+    align-items: flex;
     padding: 2px;
     transition: .3s;
     justify-content: flex-end;
@@ -326,9 +325,7 @@ body {
 
 .gallery__column {
     min-width: 278px;
-    max-width: 278px;
     gap: 5px;
-    height: 100%;
     display: flex;
     flex-direction: column;
     /* width: 100%; */
@@ -844,4 +841,33 @@ animation: slide-out 0.5s ease forwards;
         .large {
             min-height: 200px;
         }
+}
+
+
+/* Targeting the scrollbar */
+::-webkit-scrollbar {
+    width: 4px;
+    /* Thin scrollbar */
+    height: 4px;
+    /* Thin horizontal scrollbar (if needed) */
+}
+
+/* Scrollbar track (the area the scrollbar moves within) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Light gray background for track */
+}
+
+/* Scrollbar thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Darker color for the thumb */
+    border-radius: 10px;
+    /* Rounded thumb edges */
+}
+
+/* Scrollbar thumb on hover (when you hover over the scrollbar) */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Darker thumb color when hovered */
 }
