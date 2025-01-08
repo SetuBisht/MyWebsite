@@ -731,9 +731,9 @@ animation: slide-out 0.5s ease forwards;
     display:none;
 }
 /* mobile */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1062px) {
     .projects {
-            display: none !important;
+            /* display: none !important; */
         }
     .projects-mobile {
         position: absolute;
@@ -750,6 +750,9 @@ animation: slide-out 0.5s ease forwards;
         gap:5px;
         animation: slide-in-mobile 0.5s ease forwards;
     }
+        .gallery__image{
+            filter: grayscale(0);
+        }
     .text-block{
         visibility: hidden;
     }
@@ -814,8 +817,8 @@ animation: slide-out 0.5s ease forwards;
         }
 .gallery__column {
         height: auto;
-        width: 95%;
-        min-width: 95%;
+        width: 99.5%;
+        min-width: 99.5%;
         min-height: 95%;
     }
          .large {

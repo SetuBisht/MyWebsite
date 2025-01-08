@@ -136,7 +136,7 @@ const mediaQuery = window.matchMedia("(max-width: 800px)");
 const menu = document.querySelector(".menu");
 const description = document.querySelector(".description");
 const projects = document.querySelector(".projects");
-const projectsMobile = document.querySelector(".projects-mobile");
+// const projectsMobile = document.querySelector(".projects-mobile");
 const galleries = document.querySelectorAll(".gallery__column");
 const text = document.querySelectorAll(".description_text");
 const skillBox = document.querySelectorAll(".v-boxes");
@@ -169,11 +169,6 @@ menuItems.forEach((item, index) => {
       });
       setTimeout(() => {
         if (mediaQuery.matches) {
-          projectsMobile.classList.remove("slide-in-mobile");
-          projectsMobile.classList.add("slide-out-mobile");
-          setTimeout(() => {
-            projectsMobile.style.display = "none";
-          }, 300);
         } else {
           projects.style.display = "none";
         }
@@ -190,15 +185,8 @@ menuItems.forEach((item, index) => {
       spanElement.textContent = "Home";
       const spanElement2 = document.querySelector(`[data-element="Skills"]`);
       spanElement2.textContent = "Skills";
-
       description.style.display = "none";
-      if (mediaQuery.matches) {
-        projectsMobile.classList.remove("slide-out-mobile");
-        projectsMobile.classList.add("slide-in-mobile");
-        projectsMobile.style.display = "flex";
-      } else {
-        projects.style.display = "block";
-      }
+      projects.style.display = "block";
 
       skillBox.forEach((gallery) => {
         gallery.classList.remove("slide-in");
@@ -234,15 +222,7 @@ menuItems.forEach((item, index) => {
         gallery.classList.add("slide-out");
       });
       setTimeout(() => {
-        if (mediaQuery.matches) {
-          projectsMobile.classList.remove("slide-in-mobile");
-          projectsMobile.classList.add("slide-out-mobile");
-          setTimeout(() => {
-            projectsMobile.style.display = "none";
-          }, 300);
-        } else {
-          projects.style.display = "none";
-        }
+        projects.style.display = "none";
         skills.style.display = "block";
         skillBox.forEach((gallery) => {
           gallery.classList.add("slide-in");
